@@ -1,0 +1,14 @@
+{
+  "name": "bookinglap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-backend": "cd ./api && npm install",
+    "install-frontend": "cd ./frontend && npm install",
+    "install": "install-frontend && install-backend"
+  },
+  "author": "Anton Nageh, Mohamed Nassar",
+  "license": "ISC"
+}
