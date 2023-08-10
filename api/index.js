@@ -5,16 +5,13 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
-import cors from 'cors'
-//import express  from "express";
+import errorHandler from "./handlers/errorHandler.js";
 
 // App & Enviroment Declaration
 const app = express();
 dotenv.config();
-app.use(cors());
-app.use(express.json());
-app.use(express.static('dist'));
 
+app.use(express.json());
 // Database Connection
 const connect = async () => {
   try {
@@ -39,7 +36,7 @@ app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
 // 
-
+errorHandler(app)
 // Server Connection
 app.listen(8800, () => {
   connect();
