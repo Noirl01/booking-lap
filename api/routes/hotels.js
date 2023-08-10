@@ -1,61 +1,34 @@
 import express from "express";
-import Hotel from "../models/Hotel.js";
+
+import {
+  createHotel,
+  deleteHotel,
+  getAllHotels,
+  getHotel,
+  updateHotel,
+  countByCity,
+  countByType,
+  getHotelRooms
+} from "../controllers/hotel.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 // Create
-router.post("/", async (req, res, next) => {
-  const newHotel = new Hotel(req.body);
-  try {
-    const savedHotel = await newHotel.save();
-    res.status(200).json(savedHotel);
-  } catch (err) {
-    next(err);
-  }
-});
+router.post("/", verifyAdmin, createHotel);
+
 // Update
-router.put("/:id", async (req, res, next) => {
-  try {
-    const updatedHotel = await Hotel.findByIdAndUpdate(
-      req.params.id,
-      {
-        $set: req.body,
-      },
-      { new: true }
-    );
-    res.status(200).json(updatedHotel);
-  } catch (err) {
-    next(err);
-  }
-});
+router.put("/:id", verifyAdmin, updateHotel);
 
-// DELETE
-router.delete("/:id", async (req, res, next) => {
-  try {
-    await Hotel.findByIdAndDelete(req.params.id);
-    res.status(200).json("Hotel Successfully Deleted");
-  } catch (err) {
-    next(err);
-  }
-});
+// Delete
+router.delete("/:id", verifyAdmin, deleteHotel);
 
-// GET
-router.get("/:id", async (req, res, next) => {
-  try {
-    const getHotel = await Hotel.findById(req.params.id);
-    res.status(200).json(getHotel);
-  } catch (err) {
-    next(err);
-  }
-});
-// GET ALL
-router.get("/", async (req, res, next) => {
-  try {
-    const getHotels = await Hotel.find();
-    res.status(200).json(getHotels);
-  } catch (err) {
-    next(err);
-  }
-});
+// Get
+router.get("/find/:id", getHotel);
 
+// Get All
+router.get("/", getAllHotels);
+router.get("/countByCity", countByCity);
+router.get("/countByType", countByType);
+router.get("/room/:id", getHotelRooms);
 export default router;
