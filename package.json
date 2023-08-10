@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-backend": "cd ./api && npm install",
     "install-frontend": "cd ./frontend && npm install",
-    "install": "install-frontend && install-backend"
+    "install": "install-frontend && install-backend",
+    "dev-backend": "cd ./api && npm run dev"
   },
   "author": "Anton Nageh, Mohamed Nassar",
   "license": "ISC"
