@@ -7,8 +7,7 @@ export const register = async (req, res, next) => {
     const salt = bcrypt.genSaltSync(Number(process.env.ENCRYPTION_ROUNDS));
     const hash = bcrypt.hashSync(req.body.password, salt);
     const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
+      ...req.body,
       password: hash,
     });
 
@@ -23,7 +22,7 @@ export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) return next(createError(403, "Wrong Username/Password."));
-    console.log(user);
+
     const isPasswordCorrect = await bcrypt.compare(
       req.body.password,
       user.password
