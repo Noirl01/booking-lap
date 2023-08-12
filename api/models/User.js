@@ -19,32 +19,18 @@ const UserSchema = new Schema(
     },
     city: {
       type: String,
+      required: true,
     },
-    address: {
+    country: {
+      type: String,
+      required: true,
+    },
+    img: {
       type: String,
     },
-    distance: {
+    phone: {
       type: String,
-    },
-    title: {
-      type: String,
-    },
-    photos: {
-      type: [String],
-    },
-    desc: {
-      type: String,
-    },
-    rating: {
-      type: Number,
-      min: 0,
-      max: 5,
-    },
-    rooms: {
-      type: [String],
-    },
-    cheapestPrice: {
-      type: Number,
+      required: true,
     },
     isAdmin: {
       type: Boolean,

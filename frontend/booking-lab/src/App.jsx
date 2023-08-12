@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css'
 import Homepage from './Pages/Homepage/Homepage'
-import Home from './Pages/Home/Home'
+import Home from './Pages/home/Home'
 import List from './Pages/list/List'
 import Hotel from './Pages/hotel/Hotel'
 import Login from './Pages/login/Login'
