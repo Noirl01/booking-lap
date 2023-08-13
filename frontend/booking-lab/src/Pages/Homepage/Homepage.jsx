@@ -157,14 +157,13 @@ const Homepage = () => {
             </div>
           </Flickity>
         </div>
-        {data ? (
-          data.map((element) => {
-            return <p key={element._id}>{element.name}</p>;
-          })
-        ) : (
-          <p>No data to display.</p>
-        )}
-      </div>
+        {data?
+        <div className="mt-5">
+          <Hotels hotels={data}/>
+        </div>
+        :null
+        }
+        </div>
     </div>
   );
 };
