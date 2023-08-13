@@ -1,3 +1,21 @@
-.flickity-button:disabled {
+.flickity-button:disabled,.flickity-page-dots {
     display: none;
   }
+.BoxShadow, .SliderButtons {
+    box-shadow: rgba(76, 166, 254, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.SliderButtons{
+    background-color: #4ca6fe;
+    color: white !important;
+}
+.TextGreyColor{
+    color: #66627d;
+}
+.InitialBg {
+    color: white;
+    background-color: #4ca6fe;
+}
+.SecondBg {
+    background-color: white;
+}
