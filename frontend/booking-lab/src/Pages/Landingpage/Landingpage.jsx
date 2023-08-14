@@ -33,7 +33,7 @@ const Landingpage = () => {
             <h1 className='text-gray-600 md:text-3xl text-2xl'>Also book flight ticket,<br/> places, food and many more.</h1>
             
              {   
-                <Link to="/home" 
+                <Link to="/signup" 
                     className='text-white absolute -ml-[45vw] BoxShadow bg-[#4ca6fe] rounded-3xl p-[1rem] w-[90vw] mt-5 text-2xl'>
                     Get Started
                 </Link>
