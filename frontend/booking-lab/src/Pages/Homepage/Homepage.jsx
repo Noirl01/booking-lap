@@ -159,7 +159,7 @@ const Homepage = () => {
             >
               <div
                 id="div-4"
-                className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
+                className={`h-[8em] w-[6em] ml-5 mr-5 rounded-[1.7rem] TextGreyColor
           ${currentActive === "Food" ? "InitialBg" : "SecondBg"}
           `}
               >
@@ -185,7 +185,7 @@ const Homepage = () => {
         </div>
         <div className="mt-5">
           <h1 className="text-4xl font-bold ml-5">Hot Deals</h1>  
-          <div className='w-full mt-5 overflow-hidden'>   
+          <div className='w-full mt-5 ml-5 overflow-hidden'>   
             <Flickity
                   className={'carousel'}
                   elementType={'div'} 

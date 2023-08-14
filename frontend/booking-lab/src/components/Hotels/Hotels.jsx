@@ -20,6 +20,16 @@ const Hotels = ({hotels, Images, Count, isFilterActive }) => {
     groupCells: true
 }
 
+const randomBetween25_50_75 = () => {
+  var num = Math.random();
+  if (num < 0.33) {
+      return 25;
+  } else if (num < 0.66) {
+      return 50;
+  } else {
+      return 75;
+  }
+}
 
   return (
     <>
@@ -34,6 +44,11 @@ const Hotels = ({hotels, Images, Count, isFilterActive }) => {
         hotels.map((data, id) => 
             <div key={id} className='rounded-[1.7rem] flex flex-col w-auto p-10 h-[15rem] ml-[1rem] text-white gradient-bg from-transparent to-black'>
                 <img src={Images[Count+=1]} alt='none' className='object-cover -mt-10 -ml-10 -z-10 h-[100%] rounded-[1.7rem] w-[100%] absolute'></img>
+                {isFilterActive? 
+                <div className="absolute -mt-6 -ml-6">
+                  <h1 className="text-white rounded-full p-2 text-lg z-30 bg-orange-500">{randomBetween25_50_75()}%OFF</h1>
+                </div>
+                :""}
                 <div className="gradient-bg from-transparent to-black -ml-10 -mt-10 rounded-[1.7rem] -z-10 h-[15rem] w-[100%] absolute"></div>
                 <h1 className='font-bold text-2xl mt-[6rem] -ml-5'>{data.title}</h1>
                 <div className='flex flex-row -ml-5'>
