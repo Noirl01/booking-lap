@@ -1,10 +1,11 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import './App.css'
-import Homepage from './Pages/Homepage/Homepage'
-import List from './Pages/list/List'
-import Hotel from './Pages/hotel/Hotel'
-import Login from './Pages/login/Login'
-import Landingpage from './Pages/Landingpage/Landingpage'
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import './App.css';
+import Homepage from './Pages/Homepage/Homepage';
+import List from './Pages/list/List';
+import Hotel from './Pages/hotel/Hotel';
+import Login from './Pages/login/Login';
+import Landingpage from './Pages/Landingpage/Landingpage';
+import Signup from './Pages/Signup/Signup';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <Routes>
         <Route path="/" element={<Landingpage/>}/>
         <Route path="/home" element={<Homepage/>}/>
+        <Route path="/home/signup" element={<Signup/>}/>
         <Route path="/hotels" element={<List/>}/>
         <Route path="/hotels/:id" element={<Hotel/>}/>
         <Route path="/login" element={<Login/>}/>

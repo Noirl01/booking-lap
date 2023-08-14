@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import Flickity from "react-flickity-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,7 +13,23 @@ import "./Homepage.css";
 import Hotels from "../../components/Hotels/Hotels";
 import axios from "axios";
 
+import HotelPic1 from '../../assets/Images/hotels1.png'
+import HotelPic2 from '../../assets/Images/hotels2.png'
+import HotelPic3 from '../../assets/Images/hotels3.png'
+import HotelPic4 from '../../assets/Images/hotels4.png'
+import HotelPic5 from '../../assets/Images/hotels5.png'
+
 const Homepage = () => {
+  let Count = -1;
+  let isFilterActive = false; 
+  const Images = [  
+    HotelPic1,
+    HotelPic2,
+    HotelPic3,
+    HotelPic4,
+    HotelPic5
+  ]
+
   const [data, setData] = useState(null);
   const [currentActive, setCurrentActive] = useState("Hotels");
 
@@ -74,6 +90,7 @@ const Homepage = () => {
       </div>
       <div>
         <div className="text-center">
+    
           <Flickity
             className={"carousel"}
             elementType={"div"}
@@ -158,12 +175,33 @@ const Homepage = () => {
           </Flickity>
         </div>
         {data?
-        <div className="mt-5">
-          <Hotels hotels={data}/>
+        <>
+        <div className='flex mt-7 ml-5'>
+          <h1 className='text-3xl pb-4 font-bold'>Popular Hotels</h1>
+          <a className='ml-auto mr-12 mt-1 text-orange-500 text-lg' href="">See all</a>
         </div>
+        <div className="mt-5">
+          <Hotels isFilterActive={false} Count={Count} Images={Images} hotels={data}/>
+        </div>
+        <div className="mt-5">
+          <h1 className="text-4xl font-bold ml-5">Hot Deals</h1>  
+          <div className='w-full mt-5 overflow-hidden'>   
+            <Flickity
+                  className={'carousel'}
+                  elementType={'div'} 
+                  disableImagesLoaded={false}          
+            >
+          <Hotels isFilterActive={true} Count={Count} Images={Images} hotels={data}/>
+            </Flickity>
+          </div>
+        </div>
+        </>
         :null
         }
         </div>
+   <br/>
+   <br/>
+   <br/>
     </div>
   );
 };
