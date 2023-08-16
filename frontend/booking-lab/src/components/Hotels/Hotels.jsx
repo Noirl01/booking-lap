@@ -31,6 +31,10 @@ const randomBetween25_50_75 = () => {
   }
 }
 
+const handleClick = (e) =>{
+  let id = e.currentTarget.getAttribute("id");
+  window.location.href=`/hotels/${id}`;
+}
   return (
     <>
     <div className='ml-5 w-full'>   
@@ -42,7 +46,7 @@ const randomBetween25_50_75 = () => {
     >
       {
         hotels.map((data, id) => 
-            <div key={id} className='rounded-[1.7rem] flex flex-col w-auto p-10 h-[15rem] ml-[1rem] text-white gradient-bg from-transparent to-black'>
+            <div key={id} id={data._id} className='rounded-[1.7rem] flex flex-col w-auto p-10 h-[15rem] ml-[1rem] text-white gradient-bg from-transparent to-black' onClick={(e)=>handleClick(e)}>
                 <img src={Images[Count+=1]} alt='none' className='object-cover -mt-10 -ml-10 -z-10 h-[100%] rounded-[1.7rem] w-[100%] absolute'></img>
                 {isFilterActive? 
                 <div className="absolute -mt-6 -ml-6">

@@ -6,6 +6,7 @@ import Hotel from './Pages/hotel/Hotel';
 import Login from './Pages/login/Login';
 import Landingpage from './Pages/Landingpage/Landingpage';
 import Signup from './Pages/Signup/SIgnup';
+import HotelsByID from './Pages/HotelsByID/HotelsByID';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path="/home" element={<Homepage/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/hotels" element={<List/>}/>
-        <Route path="/hotels/:id" element={<Hotel/>}/>
+        <Route path="/hotels/:id" element={<HotelsByID/>}/>
         <Route path="/login" element={<Login/>}/>
     </Routes>
     </BrowserRouter>
