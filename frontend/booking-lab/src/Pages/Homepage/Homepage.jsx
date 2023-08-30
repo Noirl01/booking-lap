@@ -102,74 +102,82 @@ const Homepage = () => {
               data-target="Hotels"
               onClick={(e) => handleClick(e)}
             >
-              <div
-                id="div-1"
-                className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
-          ${currentActive === "Hotels" ? "InitialBg" : "SecondBg"}
-          `}
-              >
-                <button id="Button-1" className="-mt-5 h-[8rem] w-[6em]">
-                  <FontAwesomeIcon icon={faHotel} style={{ scale: "200%" }} />
-                </button>
-                <h1 className="-mt-8 text-base">Hotel</h1>
-              </div>
+              <div className="h-[9em] pt-2">
+                <div
+                  id="div-1"
+                  className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
+                  ${currentActive === "Hotels" ? "InitialBg" : "SecondBg"}
+                  `}
+                  >
+                    <button id="Button-1" className="-mt-5 h-[8rem] w-[6em]">
+                      <FontAwesomeIcon icon={faHotel} style={{ scale: "200%" }} />
+                    </button>
+                    <h1 className="-mt-8 text-base">Hotel</h1>
+                  </div>
+                </div>
             </div>
-            <div
-              className="flex justify-center"
-              data-target="Flight"
-              onClick={(e) => handleClick(e)}
+            <div className="h-[10em] pt-2">
+              <div
+                className="flex justify-center"
+                data-target="Flight"
+                onClick={(e) => handleClick(e)}
+              >
+                <div
+                  id="div-2"
+                  className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
+                  ${currentActive === "Flight" ? "InitialBg" : "SecondBg"}
+            `}
             >
-              <div
-                id="div-2"
-                className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
-          ${currentActive === "Flight" ? "InitialBg" : "SecondBg"}
-          `}
-              >
-                <button id="Button-2" className="-mt-5 h-[8rem] w-[6em]">
-                  <FontAwesomeIcon icon={faPlaneUp} style={{ scale: "200%" }} />
-                </button>
-                <h1 className="-mt-8 text-base">Flight</h1>
+                  <button id="Button-2" className="-mt-5 h-[8rem] w-[6em]">
+                    <FontAwesomeIcon icon={faPlaneUp} style={{ scale: "200%" }} />
+                  </button>
+                  <h1 className="-mt-8 text-base">Flight</h1>
+                </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div
-                id="div-3"
-                className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
-          ${currentActive === "Place" ? "InitialBg" : "SecondBg"}
-          `}
-              >
-                <button
-                  id="Button-3"
-                  className="-mt-5 h-[8rem] w-[6em]"
-                  data-target="Place"
-                  onClick={(e) => handleClick(e)}
+            <div className="h-[10em] pt-2">
+              <div className="flex justify-center">
+                <div
+                  id="div-3"
+                  className={`h-[8em] w-[6em] ml-5 rounded-[1.7rem] TextGreyColor
+            ${currentActive === "Place" ? "InitialBg" : "SecondBg"}
+            `}
                 >
-                  <FontAwesomeIcon
-                    icon={faLocationDot}
-                    style={{ scale: "200%" }}
-                  />
-                </button>
-                <h1 className="-mt-8 text-base">Place</h1>
+                  <button
+                    id="Button-3"
+                    className="-mt-5 h-[8rem] w-[6em]"
+                    data-target="Place"
+                    onClick={(e) => handleClick(e)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faLocationDot}
+                      style={{ scale: "200%" }}
+                    />
+                  </button>
+                  <h1 className="-mt-8 text-base">Place</h1>
+                </div>
               </div>
             </div>
-            <div
-              className="flex justify-center"
-              data-target="Food"
-              onClick={(e) => handleClick(e)}
-            >
+            <div className="h-[10em] pt-2">
               <div
-                id="div-4"
-                className={`h-[8em] w-[6em] ml-5 mr-5 rounded-[1.7rem] TextGreyColor
-          ${currentActive === "Food" ? "InitialBg" : "SecondBg"}
-          `}
+                className="flex justify-center"
+                data-target="Food"
+                onClick={(e) => handleClick(e)}
               >
-                <button id="Button-4" className="-mt-5 h-[8rem] w-[6em]">
-                  <FontAwesomeIcon
-                    icon={faUtensils}
-                    style={{ scale: "200%" }}
-                  />
-                </button>
-                <h1 className="-mt-8 text-base">Food</h1>
+                <div
+                  id="div-4"
+                  className={`h-[8em] w-[6em] ml-5 mr-5 rounded-[1.7rem] TextGreyColor
+            ${currentActive === "Food" ? "InitialBg" : "SecondBg"}
+            `}
+                >
+                  <button id="Button-4" className="-mt-5 h-[8rem] w-[6em]">
+                    <FontAwesomeIcon
+                      icon={faUtensils}
+                      style={{ scale: "200%" }}
+                    />
+                  </button>
+                  <h1 className="-mt-8 text-base">Food</h1>
+                </div>
               </div>
             </div>
           </Flickity>
@@ -178,13 +186,13 @@ const Homepage = () => {
         <>
         <div className='flex mt-7 ml-5'>
           <h1 className='text-3xl pb-4 font-bold'>Popular Hotels</h1>
-          <a className='ml-auto mr-12 mt-1 text-orange-500 text-lg' href="">See all</a>
+          <a className='ml-auto mr-12 mt-1 text-orange-500 text-lg' href="/popular">See all</a>
         </div>
         <div className="mt-5">
           <Hotels isFilterActive={false} Count={Count} Images={Images} hotels={data}/>
         </div>
         <div className="mt-5">
-          <h1 className="text-4xl font-bold ml-5">Hot Deals</h1>  
+          <h1 className="text-4xl font-bold ml-5 py-5 overflow-hidden">Hot Deals</h1>  
           <div className='w-full mt-5 ml-5 overflow-hidden'>   
             <Flickity
                   className={'carousel'}

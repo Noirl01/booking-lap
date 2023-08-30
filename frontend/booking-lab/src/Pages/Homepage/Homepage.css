@@ -19,3 +19,9 @@
 .SecondBg {
     background-color: white;
 }
+#div-1:hover, 
+#div-2:hover,
+#div-3:hover,
+#div-4:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+}

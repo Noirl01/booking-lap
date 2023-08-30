@@ -1,0 +1,14 @@
+#more {display: none;}
+
+.Card:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 10px 20px 30px;
+}
+.Card {
+    margin-left: 10px;
+    padding: 20px;
+    border-radius: 1.7rem;
+    border-width: 1px;
+    border-color: #998e8a;
+    border-style: solid;
+    margin: 10px;
+}
