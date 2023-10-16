@@ -1,0 +1,6 @@
+.SocialIconsHover:hover{
+    font-weight: 100 !important;
+}
+.SocialIconsHover {
+    transform: scale(150%);
+}

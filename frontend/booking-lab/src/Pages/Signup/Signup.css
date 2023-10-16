@@ -1,0 +1,16 @@
+input {
+    border-radius: 500px; 
+    padding: 10px;
+    width: 90%;
+}
+.Gradient-Bg {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+input .form-control, input.form-control:focus {
+    background-color: #F0F0FF;
+}
+.error {
+    margin-bottom: 1rem;
+    color: red;
+    font-size: 1em;
+}
