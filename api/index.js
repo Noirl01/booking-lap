@@ -5,13 +5,14 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
-import errorHandler from "./handlers/errorHandler.js";
-
+import cors from "cors";
+import cookieParser from "cookie-parser";
 // App & Enviroment Declaration
 const app = express();
 dotenv.config();
+app.use(express.json(), cors());
+app.use(cookieParser());
 
-app.use(express.json());
 // Database Connection
 const connect = async () => {
   try {
@@ -30,15 +31,26 @@ mongoose.connection.on("connected", () => {
   console.log("Database Connected!");
 });
 
-// Middlewares
+// Routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
-// 
-errorHandler(app)
+
+// Error Middleware
+app.use("/", (err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong !";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack,
+  });
+});
+
 // Server Connection
-app.listen(8800, () => {
+app.listen(process.env.SERVER_PORT || 8800, () => {
   connect();
   console.log("Backend is UP!");
 });

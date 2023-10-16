@@ -1,19 +1,28 @@
 {
-  "name": "bookinglap",
+  "name": "bookinglab-backend",
   "version": "1.0.0",
   "description": "A Travel Booking System Full-Stack Application",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
+    "cleanport": "npx kill-port 8800",
+    "start": "node index.js",
+    "dev": "npm run cleanport && nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anton Nageh, Mohamed Nassar",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^7.4.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "kill-port": "^2.0.1",
     "nodemon": "^3.0.1"
   }
 }
